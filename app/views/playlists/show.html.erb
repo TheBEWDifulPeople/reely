@@ -1,0 +1,13 @@
+<p>
+  <strong>Title:</strong>
+  <%= @playlist.title %>
+</p>
+ 
+<p>
+  <strong>MP3:</strong>
+  <%= @playlist.mp3 %>
+</p>
+
+<%= link_to 'Edit', edit_playlist_path(@playlist) %>
+
+<%= link_to 'Back', playlists_path %>

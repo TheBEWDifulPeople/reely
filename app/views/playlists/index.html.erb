@@ -1,0 +1,17 @@
+<h1>your playlists</h1>
+
+<%= link_to 'Create a new playlist', new_playlist_path %>
+
+ 
+<% @playlists.each do |playlist| %>
+<p>
+<strong>title: </strong><%= playlist.title %> 
+<strong>mp3: </strong><%= playlist.mp3 %>
+<%= link_to 'Show', playlist_path(playlist) %>
+<%= link_to 'Edit', edit_playlist_path(@playlist) %>
+
+
+<%= link_to 'Destroy', playlist_path(playlist),
+                    method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+  <% end %>
