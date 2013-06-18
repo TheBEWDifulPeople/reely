@@ -33,6 +33,7 @@ group :doc do
 end
 
 gem 'carrierwave'
+gem 'zurb-foundation'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

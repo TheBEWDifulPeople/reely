@@ -1,16 +1,44 @@
-<h1>your playlists</h1>
+<div class="tippy row">
+	<div class="small-9 large-9 columns">
+		<h3>playlists</h3>
 
-<%= link_to 'Create a new playlist', new_playlist_path %>
+			<ul class="no-bullet">
+			<% @playlists.each do |playlist| %>
+			<li class="playlist-item">
+				<%= link_to playlist.title, playlist_path(playlist) %>
+				<%= link_to 'Edit', edit_playlist_path(playlist), :class => "label" %>
+				<%= link_to 'Delete', playlist_path(playlist),  method: :delete, data: { confirm: 'Are you sure?' }, :class => "label alert" %>
 
-<h1>Playlists</h1> 
-<% @playlists.each do |playlist| %>
-<ul>
-	<% i=1 %>
-	<li><%= "#{i}. " %><%= link_to playlist.title, playlist_path(playlist) %> </li>
-	<% i+1 %>
+			</li>
 
-	<li><%= link_to 'Edit', edit_playlist_path(playlist) %></li>
+			<% end %>
+		</ul>
 
-	<li><%= link_to 'Delete', playlist_path(playlist), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-</ul>
-<% end %>
+
+
+
+  </div>
+
+
+
+
+
+<div class="small-12 large-3 columns">
+	<%= link_to 'create new playlist', new_playlist_path, :class =>"button" %>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

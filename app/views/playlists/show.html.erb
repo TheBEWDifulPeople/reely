@@ -1,3 +1,8 @@
+<div class="tippy row">
+	<div class="small-1 large-6 columns">
+
+
+
 <p>
   <strong>Title:</strong>
   <%= @playlist.title %>
@@ -8,11 +13,16 @@
   <%= @playlist.mp3 %>
 </p>
 
-<p>
-<strong>SONG</strong>
- <audio src="<%= @playlist.track_url.to_s %>" controls preload="auto" autobuffer />
-</p>
 
-<%= link_to 'Edit', edit_playlist_path(@playlist) %>
+ <div><audio src="<%= @playlist.track_url.to_s %>" controls preload="auto" autobuffer /></div>
 
-<%= link_to 'Back', playlists_path %>
+
+<%= link_to 'Edit', edit_playlist_path(@playlist), :class=>"button" %>
+
+<%= link_to 'Back', playlists_path, :class=>"button" %>
+
+
+</div>
+</div>
+
+
