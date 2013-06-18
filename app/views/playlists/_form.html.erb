@@ -9,10 +9,11 @@
 
 <% end %>
 
-<%= form_for @playlist do |f| %>
+<%= form_for @playlist, :html => {:multipart => true} do |f| %>
 	<%= f.label :title %>
 	<%= f.text_field :title %>
 	<%= f.label :mp3 %>
 	<%= f.text_field :mp3 %>
+	<%= f.file_field :track %>
 	<%= f.submit%>
 <% end %>

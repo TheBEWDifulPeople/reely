@@ -8,6 +8,11 @@
   <%= @playlist.mp3 %>
 </p>
 
+<p>
+<strong>SONG</strong>
+ <audio src="<%= @playlist.track_url.to_s %>" controls preload="auto" autobuffer />
+</p>
+
 <%= link_to 'Edit', edit_playlist_path(@playlist) %>
 
 <%= link_to 'Back', playlists_path %>

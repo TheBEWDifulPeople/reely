@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130615215251) do
+ActiveRecord::Schema.define(version: 20130618002415) do
 
   create_table "playlists", force: true do |t|
     t.string   "title"
     t.string   "mp3"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "track_file_name"
+    t.string   "track_content_type"
+    t.integer  "track_file_size"
+    t.datetime "track_updated_at"
+    t.string   "track"
   end
 
 end

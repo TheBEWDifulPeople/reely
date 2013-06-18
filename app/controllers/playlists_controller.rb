@@ -38,7 +38,7 @@ end
 private
   
 def playlist_params
-  params.require('playlist').permit(:title, :mp3)
+  params.require('playlist').permit(:title, :mp3, :track)
 end
 
 def set_playlist
