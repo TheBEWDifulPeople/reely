@@ -1,0 +1,24 @@
+<div class="tippy row">
+<div class="small-1 large-12 columns">
+
+	<h1>Welcome to Ree.ly</h1>
+	<h6> join us and make a playlist. login to create a playlist</h6>
+
+	<ul class="no-bullet">
+		<% @playlists.each do |playlist| %>
+		<li class="playlist-item">
+			<%= link_to playlist.title, playlist_path(playlist) %>
+		</li>
+		<% end %>
+	</ul>
+	
+	 <% if user_signed_in? %>
+
+	<%= link_to 'create new playlist', new_playlist_path, :class =>"button" %>
+
+<% end %>
+
+</div>
+
+</div>
+</div>

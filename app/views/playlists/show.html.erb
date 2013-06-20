@@ -1,28 +1,20 @@
-<div class="tippy row">
-	<div class="small-1 large-6 columns">
 
 
-
-<p>
-  <strong>Title:</strong>
-  <%= @playlist.title %>
-</p>
+	<h3><%= @playlist.title %></h3>
  
-<p>
-  <strong>MP3:</strong>
-  <%= @playlist.mp3 %>
-</p>
+	<ul class="graphic">
+		<li>
+			<a href="<%= @playlist.track_url.to_s %>"><%= @playlist.mp3 %></a>
+		</li>
+	</ul>
+<% if user_signed_in? %>
+	<%= link_to 'Edit', edit_playlist_path(@playlist), :class=>"button" %>
+	<%= link_to 'Back', playlists_path, :class=>"button" %>
+<% else %>
+<%= link_to "back to home page", root_path %>
+
+<% end %>
 
 
- <div><audio src="<%= @playlist.track_url.to_s %>" controls preload="auto" autobuffer /></div>
-
-
-<%= link_to 'Edit', edit_playlist_path(@playlist), :class=>"button" %>
-
-<%= link_to 'Back', playlists_path, :class=>"button" %>
-
-
-</div>
-</div>
 
 

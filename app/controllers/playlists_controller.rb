@@ -1,4 +1,5 @@
 class PlaylistsController < ApplicationController
+before_filter :authenticate_user!, except: [:show]
 before_action :set_playlist, only: [:edit, :show, :update, :destroy]
 
 def index
@@ -38,7 +39,7 @@ end
 private
   
 def playlist_params
-  params.require('playlist').permit(:title, :mp3, :track)
+  params.require('playlist').permit(:title, :track, :mp3)
 end
 
 def set_playlist

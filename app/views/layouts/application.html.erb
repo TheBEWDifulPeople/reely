@@ -25,24 +25,31 @@
     <div class="contain-to-grid">
     <nav class="top-bar">
       <ul class="title-area">
-        <!-- Title Area -->
-        <li class="name">
-          <h1><%= link_to "ree.ly", root_path %></h1>
-        </li>
-                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="name"><h1><%= link_to "ree.ly", root_path %></h1></li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
 
       <section class="top-bar-section">
         <ul class="right">
-          <li><%= link_to "my playlists", playlists_path %></li>  
+           <% if user_signed_in? %>
+            
+            <li><%= link_to "my playlists", playlists_path %></li>
+            <li><%= link_to 'edit profile', edit_user_registration_path %></li>
+            <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li> <%= link_to "sign up", new_user_registration_path %></li>
+            <li><%= link_to "login", new_user_session_path %></li>
+          <% end %> 
         </ul>
       </section>
     </nav>
   </div>
 
+<div class="tippy row">
+<div class="small-9 large-9 columns">
     <%= yield %>
-
+</div>
+</div>
     
     <%= javascript_include_tag "application" %>
   </body>

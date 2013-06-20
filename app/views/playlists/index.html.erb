@@ -1,32 +1,24 @@
-<div class="tippy row">
-	<div class="small-9 large-9 columns">
-		<h3>playlists</h3>
 
-			<ul class="no-bullet">
-			<% @playlists.each do |playlist| %>
-			<li class="playlist-item">
-				<%= link_to playlist.title, playlist_path(playlist) %>
-				<%= link_to 'Edit', edit_playlist_path(playlist), :class => "label" %>
-				<%= link_to 'Delete', playlist_path(playlist),  method: :delete, data: { confirm: 'Are you sure?' }, :class => "label alert" %>
+		
+	<h3>playlists</h3>
 
-			</li>
+	<ul class="no-bullet">
+		<% @playlists.each do |playlist| %>
+		<li class="playlist-item">
+			<%= link_to playlist.title, playlist_path(playlist) %>
+			<%= link_to 'Edit', edit_playlist_path(playlist), :class => "label" %>
+			<%= link_to 'Delete', playlist_path(playlist),  method: :delete, data: { confirm: 'Are you sure?' }, :class => "label alert" %>
+		</li>
+		<% end %>
+	</ul>
 
-			<% end %>
-		</ul>
-
-
-
-
-  </div>
-
-
-
-
+</div>
 
 <div class="small-12 large-3 columns">
 	<%= link_to 'create new playlist', new_playlist_path, :class =>"button" %>
 </div>
-</div>
+
+
 
 
 

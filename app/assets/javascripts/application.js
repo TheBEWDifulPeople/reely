@@ -13,7 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require soundmanager2.js
+//= require inlineplayer.js
 //= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+soundManager.setup({
+  useFlashBlock: true, // optional - if used, required flashblock.css
+  url: '/swf/' // required: path to directory containing SM2 SWF files
+});

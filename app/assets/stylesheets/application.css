@@ -10,7 +10,8 @@
  *
  *= require_self
  *= require foundation_and_overrides
-  *= require custom
+ *= require custom
+ *= require inlineplayer.css
  *= require_tree .
  */
 
