@@ -36,7 +36,6 @@ gem 'carrierwave'
 gem 'zurb-foundation'
 gem 'devise', '3.0.0.rc'
 
-
 group :production do
   gem 'pg'
 end
